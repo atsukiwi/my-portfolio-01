@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useMemo, useState } from "react";
+import { useRef, useMemo, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
@@ -86,7 +86,7 @@ function VerticalStabilizer({ offset = 0, colorOffset = 0 }) {
     });
   }, [colorOffset]);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (groupRef.current && materialRef.current) {
       time.current += delta * 0.5;
 
